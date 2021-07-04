@@ -1,0 +1,105 @@
+GET http://localhost:3000/
+### Récupération de l'écran d'accueil
+
+GET http://localhost:3000/games
+### Récupération de tout les jeux
+
+GET http://localhost:3000/games/category/31
+### Récupération des jeux par categories
+
+GET http://localhost:3000/games/platform/6
+### Récupération des jeux par plateforme
+
+GET http://localhost:3000/games/10
+### Récupération des données d'un jeu
+
+GET http://localhost:3000/games/520/review
+### Récupération de toutes les reviews d'un jeu
+
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+
+{
+    "pseudo": "Anonymous",
+    "email": "abbbbbbabab@gmail.com",
+    "password": "9999999"
+}
+### Inscription d'un membre
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "abbbbbbabab@gmail.com",
+    "password": "9999999"
+}
+### Login d'un membre
+
+GET http://localhost:3000/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.QW5vbnltb3Vz.y3W8LwXhBkjijcKR1HDKj4RVii7TCXAjPT9TtkkUAto
+### Connexion à son profil
+
+POST http://localhost:3000/games/12345/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.QW5vbnltb3Vz.y3W8LwXhBkjijcKR1HDKj4RVii7TCXAjPT9TtkkUAto
+
+{
+            "content":"Nul!!",
+            "gameplay_note" : 0,
+            "soundtrack_note" : 0,
+            "graphism_note" : 0,
+            "global_note" : 0
+}
+### Poster un avis
+
+PATCH http://localhost:3000/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Q0JERg.qVUZu2aHgSwK-lTmFX_-pj8u926B5u0jcIznCaL-Fbc
+
+{
+    "picture_url" : "abcdefghij/dpjad.jpg"
+}
+### Modifier son profil
+
+PATCH http://localhost:3000/games/2/review/9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Q0JERg.qVUZu2aHgSwK-lTmFX_-pj8u926B5u0jcIznCaL-Fbc
+
+{
+    "content" : "Finalement pas mal ...",
+    "global_note": 4
+}
+### Modifier une review
+POST http://localhost:3000/contact
+Content-Type: application/json
+
+{
+    "email":"superuser@gmail.fr",
+    "content":"Le site est top , pouvez-vous rajouter encore plus de fonctionnalités ?"
+}
+### message pour admin
+
+PATCH http://localhost:3000/games/520/review/7/report
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Q0JERg.qVUZu2aHgSwK-lTmFX_-pj8u926B5u0jcIznCaL-Fbc
+### Reporter une review abusive
+
+POST http://localhost:3000/search
+Content-Type: application/json
+
+{
+    "name" : "League of Legends"
+}
+### Recherche de jeu par nom complet ou approximatif
+
+PATCH http://localhost:3000/games/520/review/1/upvote
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Q0JERg.qVUZu2aHgSwK-lTmFX_-pj8u926B5u0jcIznCaL-Fbc
+### Vote positif d'une review
+
+PATCH http://localhost:3000/games/520/review/1/downvote
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Q0JERg.qVUZu2aHgSwK-lTmFX_-pj8u926B5u0jcIznCaL-Fbc
+### Vote négatif d'une review

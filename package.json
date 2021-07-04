@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend gameTesting project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node .",
+    "import": "psql -f ./data/seeding2.sql -d postgres://eslvzkchaxqphi:e43c59b154b31ed9b9752f551a52d7a24eca725f6d417f859520dff2271cd651@ec2-54-195-76-73.eu-west-1.compute.amazonaws.com:5432/d34lipmipuo5po"
+  },
+  "keywords": [
+    "[Games]"
+  ],
+  "author": "@ChrisBenetto",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "bulma": "^0.9.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.6.0",
+    "sanitize-html": "^2.4.0"
+  }
+}
